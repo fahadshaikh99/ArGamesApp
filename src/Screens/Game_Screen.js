@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Image, Button} from 'react-native';
+import { View, Text, Image, Button, Linking} from 'react-native';
 
 const Game_Screen = () => {
     return(
@@ -15,6 +15,7 @@ const Game_Screen = () => {
                 Bike Rider
             </Text>
             <Button 
+                onPress={() => Linking.openURL('https://www.instagram.com/ar/201171791305100')}
                 title="Play Now"
             />
             <Text>

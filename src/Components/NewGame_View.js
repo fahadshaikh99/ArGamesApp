@@ -1,7 +1,7 @@
 import React from 'react';
 import {View, Text, Image} from 'react-native';
 
-const Game_View = ({game_info}) => {
+const NewGame_View = ({game_info}) => {
     return (
         <View style={{ marginLeft: 6}}>
             <Image 
@@ -17,8 +17,8 @@ const Game_View = ({game_info}) => {
 
 const styles = {
     imageStyle: {
-        width: 210,
-        height: 290,
+        width: 150,
+        height: 150,
         borderRadius: 4,
         marginRight: 10,
         borderRadius: 25
@@ -26,4 +26,4 @@ const styles = {
 
 };
 
-export default Game_View;
+export default NewGame_View;
