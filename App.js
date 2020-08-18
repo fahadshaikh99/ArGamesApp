@@ -1,13 +1,30 @@
+import 'react-native-gesture-handler';
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 import Home_Screen from './src/Screens/Home_Screen';
 import Game_Screen from './src/Screens/Game_Screen';
+import Start_Screen from './src/Screens/Start_Screen';
 
-export default function App() {
+const Stack = createStackNavigator();
+
+function App() {
   return (
-    <Game_Screen />
-   
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Start">
+        <Stack.Screen name="StartScreen" component={Start_Screen}
+          options={{ headerShown:false}}
+        />
+        <Stack.Screen name="HomeScreen" component={Home_Screen} 
+          options={{ headerShown:false}}
+        />
+        <Stack.Screen name="Games" component={Game_Screen} 
+         
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
@@ -19,3 +36,5 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+
+export default App;

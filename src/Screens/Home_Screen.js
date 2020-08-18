@@ -1,8 +1,8 @@
 import React from 'react';
-import { View, Text, FlatList, ScrollView} from 'react-native';
+import { View, Text, FlatList, ScrollView, TouchableOpacity} from 'react-native';
 import Game_View from '../Components/Game_view';
 
-const Home_Screen = () => {
+const Home_Screen = ({ navigation }) => {
 
     const DATA = [
         { id: 1, text: 'Card #1', uri: 'http://imgs.abduzeedo.com/files/paul0v2/unsplash/unsplash-04.jpg' },
@@ -27,9 +27,11 @@ const Home_Screen = () => {
                 keyExtractor = { (item, index) => index.toString() }
                 renderItem= {({item}) => {
                 return ( 
-                    <Game_View 
-                        game_info={item}
-                    />
+                    <TouchableOpacity onPress={() => navigation.navigate('Games')}>
+                        <Game_View 
+                            game_info={item}
+                        />
+                    </TouchableOpacity>
                 );
             }}
             />
@@ -43,9 +45,11 @@ const Home_Screen = () => {
                     keyExtractor = { (item, index) => index.toString() }
                     renderItem= {({item}) => {
                     return ( 
-                        <Game_View 
-                            game_info={item}
-                        />
+                        <TouchableOpacity onPress={() => navigation.navigate('Games')}>
+                            <Game_View 
+                                game_info={item}
+                            />
+                        </TouchableOpacity>
                     );
                 }}
                 />
